@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_clv_insured_tree_l10n_br">
+            <field name="name">clv_insured.tree</field>
+            <field name="model">clv_insured</field>
+            <field name="inherit_id" ref="clv_insured.view_clv_insured_tree"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="cpf"/>
+                    <field name="rg"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_clv_insured_form_l10n_br">
+            <field name="name">clv_insured.form</field>
+            <field name="model">clv_insured</field>
+            <field name="inherit_id" ref="clv_insured.view_clv_insured_form"/>
+            <field name="arch" type="xml">
+                <field name="identification_id" position="replace">
+                    <field name="cpf"/>
+                </field>
+                <field name="otherid" position="replace">
+                    <field name="rg"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_clv_insured_search_l10n_br">
+            <field name="name">clv_insured.filter</field>
+            <field name="model">clv_insured</field>
+            <field name="inherit_id" ref="clv_insured.view_clv_insured_search"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="cpf"/>
+                    <field name="rg"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
