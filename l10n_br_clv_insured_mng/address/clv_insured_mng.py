@@ -24,7 +24,7 @@ class clv_insured_mng(models.Model):
     _inherit = 'clv_insured_mng'
 
     addr_l10n_br_city_id = fields.Many2one('l10n_br_base.city', u'Município', 
-                                           domain="[('addr_state_id','=',addr_state_id)]")
+                                           domain="[('state_id','=',addr_state_id)]")
     addr_district = fields.Char('Bairro', size=32)
     addr_number = fields.Char(u'Número', size=10)
 
