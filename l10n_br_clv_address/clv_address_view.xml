@@ -42,5 +42,16 @@
             </field>
         </record>
 
+        <record id="view_clv_address_search_l10n_br" model="ir.ui.view">
+            <field name="name">clv_address.form</field>
+            <field name="model">clv_address</field>
+            <field name="inherit_id" ref="clv_address.view_clv_address_search" />
+            <field name="arch" type="xml">
+                <filter string="City" position="replace">
+                    <filter string="City" context="{'group_by': 'l10n_br_city_id'}"/>
+                </filter>
+            </field>
+        </record>
+
     </data>
 </openerp>
