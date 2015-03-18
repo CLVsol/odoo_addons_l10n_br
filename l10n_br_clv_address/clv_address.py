@@ -39,7 +39,7 @@ class clv_address(models.Model):
             address_format = (
                 address.country_id
                 and address.country_id.address_format
-                or "%(street)s\n%(street2)s\n%(city)s %(state_code)s"
+                or "%(street)s\n%(street2)s\n%(l10n_br_city_name)s %(state_code)s"
                 "%(zip)s\n%(country_name)s")
             args = {
                 'state_code': address.state_id and address.state_id.code or '',
