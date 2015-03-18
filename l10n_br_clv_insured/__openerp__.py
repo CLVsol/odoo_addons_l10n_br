@@ -18,25 +18,29 @@
 ################################################################################
 
 {
-    'name': 'Address Brazilian Localization',
+    'name': 'Insured - Brazilian Localization',
     'version': '1.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'Generic Modules/Others',
     'license': 'AGPL-3',
     'website': 'http://clvsol.com',
     'description': '''
-Address Brazilian Localization
-==============================
+Insured - Brazilian Localization
+================================
     ''',
+    'images': [],
     'depends': [
-        'l10n_br_base',
-        'l10n_br_zip',
-        'clv_address',
+        'clv_insured',
         ],
     'data': [
-        'clv_address_view.xml',
+        'clv_insured_view.xml',
         ],
+    'demo': [],
     'test': [],
+    'init_xml': [],
+    'test': [],
+    'update_xml': [],
     'installable': True,
     'active': False,
+    'css': [],
 }

@@ -17,26 +17,4 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Address Brazilian Localization',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Address Brazilian Localization
-==============================
-    ''',
-    'depends': [
-        'l10n_br_base',
-        'l10n_br_zip',
-        'clv_address',
-        ],
-    'data': [
-        'clv_address_view.xml',
-        ],
-    'test': [],
-    'installable': True,
-    'active': False,
-}
+import clv_insured

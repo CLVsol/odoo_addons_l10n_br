@@ -17,26 +17,52 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'Address Brazilian Localization',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-Address Brazilian Localization
-==============================
-    ''',
-    'depends': [
-        'l10n_br_base',
-        'l10n_br_zip',
-        'clv_address',
-        ],
-    'data': [
-        'clv_address_view.xml',
-        ],
-    'test': [],
-    'installable': True,
-    'active': False,
-}
+import re
+
+from openerp import models, fields, api
+from openerp.exceptions import Warning
+
+def validate_cpf(cpf):
+
+    if not cpf.isdigit():
+        cpf = re.sub('[^0-9]', '', cpf)
+    if len(cpf) != 11:
+        return False
+    cpf = map(int, cpf)
+    new = cpf[:9]
+    while len(new) < 11:
+        r = sum([(len(new) + 1 - i) * v for i, v in enumerate(new)]) % 11
+        if r > 1:
+            f = 11 - r
+        else:
+            f = 0
+        new.append(f)
+    if new == cpf:
+        return True
+    return False
+
+class clv_insured(models.Model):
+    _inherit = 'clv_insured'
+
+    cpf = fields.Char('CPF', size=14)
+    rg = fields.Char('RG', size=16)
+
+    @api.one
+    @api.constrains('cpf')
+    def _check_cpf(self):
+        if self.cpf:
+            if not validate_cpf(self.cpf):
+                raise Warning((u'CPF inválido!'))
+        return True
+
+    @api.onchange('cpf')
+    def onchange_mask_cpf(self):
+        if self.cpf:
+            val = re.sub('[^0-9]', '', self.cpf)
+            if len(val) == 11:
+                cpf = "%s.%s.%s-%s" % (val[0:3], val[3:6], val[6:9], val[9:11])
+                self.cpf = cpf
+                if not validate_cpf(self.cpf):
+                    raise Warning((u'CPF inválido!'))
+            else:
+                raise Warning((u'Verifique o CPF!'))
