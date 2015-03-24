@@ -26,7 +26,7 @@
             <field name="arch" type="xml">
                 <page string="Annotation for" position="inside">
                     <group string="ABCFarma Medicaments" groups="clv_base.group_medicament_user">
-                        <field name="medicament_ids" colspan="4" nolabel="1"/>
+                        <field name="abcfarma_ids" colspan="4" nolabel="1"/>
                     </group>
                 </page>
             </field>
