@@ -18,8 +18,8 @@
 ###############################################################################
 
 {
-    'name': 'Brazilian zip codes datas',
-    'description': 'Brazilian zip codes datas',
+    'name': 'Brazilian zip codes data',
+    'description': 'Brazilian zip codes data',
     'license': 'AGPL-3',
     'author': 'Akretion, OpenERP Brasil',
     'version': '0.1',
