@@ -24,3 +24,5 @@ import wkf
 import history
 import clv_medicament
 import clv_medicament_mng
+import active_component
+import manufacturer

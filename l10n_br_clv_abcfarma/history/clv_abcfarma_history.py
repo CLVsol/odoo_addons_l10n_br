@@ -30,9 +30,9 @@ class clv_abcfarma_history(osv.osv):
         'user_id':fields.many2one ('res.users', 'User', required=True),
         'date': fields.datetime("Date", required=True),
         'state': fields.selection([('new','New'),
-                                   ('done','Done'),
                                    ('revised','Revised'),
                                    ('waiting','Waiting'),
+                                   ('done','Done'),
                                    ], string='Status', readonly=True, required=True, help=""),
         'notes': fields.text(string='Notes'),
         }
@@ -92,11 +92,6 @@ class clv_abcfarma(osv.osv):
         for abcfarma in self.browse(cr, uid, ids):
             self.insert_clv_abcfarma_history(cr, uid, abcfarma.active_history, abcfarma.id, 'new', '')
 
-    def button_done(self, cr, uid, ids):
-        self.write(cr, uid, ids, {'state': 'done'})
-        for abcfarma in self.browse(cr, uid, ids):
-            self.insert_clv_abcfarma_history(cr, uid, abcfarma.active_history, abcfarma.id, 'done', '')
-
     def button_revised(self, cr, uid, ids):
         self.write(cr, uid, ids, {'state': 'revised'})
         for abcfarma in self.browse(cr, uid, ids):
@@ -106,3 +101,8 @@ class clv_abcfarma(osv.osv):
         self.write(cr, uid, ids, {'state': 'waiting'})
         for abcfarma in self.browse(cr, uid, ids):
             self.insert_clv_abcfarma_history(cr, uid, abcfarma.active_history, abcfarma.id, 'waiting', '')
+
+    def button_done(self, cr, uid, ids):
+        self.write(cr, uid, ids, {'state': 'done'})
+        for abcfarma in self.browse(cr, uid, ids):
+            self.insert_clv_abcfarma_history(cr, uid, abcfarma.active_history, abcfarma.id, 'done', '')

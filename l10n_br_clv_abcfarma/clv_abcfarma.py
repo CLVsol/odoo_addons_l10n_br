@@ -20,7 +20,7 @@
 from openerp import tools, api
 from openerp.osv import osv, fields
 
-class oehealth_abcfarma(osv.Model):
+class clv_abcfarma(osv.Model):
     _name = 'clv_abcfarma'
 
     def _compute_name(self, cr, uid, ids, field_name, arg, context={}):

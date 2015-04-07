@@ -37,11 +37,11 @@
             <field name="action">button_waiting()</field>
         </record>
 
-        <record id="t1" model="workflow.transition">
+        <!--record id="t1" model="workflow.transition">
             <field name="act_from" ref="act_new" />
             <field name="act_to" ref="act_done" />
             <field name="signal">button_done</field>
-        </record>
+        </record-->
 
         <record id="t2" model="workflow.transition">
             <field name="act_from" ref="act_new" />
@@ -49,11 +49,11 @@
             <field name="signal">button_revised</field>
         </record>
 
-        <record id="t3" model="workflow.transition">
+        <!--record id="t3" model="workflow.transition">
             <field name="act_from" ref="act_new" />
             <field name="act_to" ref="act_waiting" />
             <field name="signal">button_waiting</field>
-        </record>
+        </record-->
 
         <record id="t4" model="workflow.transition">
             <field name="act_from" ref="act_done" />
@@ -61,11 +61,11 @@
             <field name="signal">button_revised</field>
         </record>
 
-        <record id="t5" model="workflow.transition">
+        <!--record id="t5" model="workflow.transition">
             <field name="act_from" ref="act_done" />
             <field name="act_to" ref="act_waiting" />
             <field name="signal">button_waiting</field>
-        </record>
+        </record-->
 
         <record id="t6" model="workflow.transition">
             <field name="act_from" ref="act_revised" />
