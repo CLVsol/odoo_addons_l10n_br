@@ -133,7 +133,7 @@
                     <filter string="Active Medicaments" name="comunities" domain="[('excluded','=',0)]" help="Active Medicaments"/>
                     <separator/>
                     <group expand="0" string="Group By...">
-                        <!--filter string="Stage" domain="[]" context="{'group_by': 'state'}"/-->
+                        <filter string="From" domain="[]" context="{'group_by': 'from'}"/>
                     </group>
                 </search>
             </field>
