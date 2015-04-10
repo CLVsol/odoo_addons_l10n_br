@@ -8,7 +8,7 @@
             <field name="inherit_id" ref="view_clv_abcfarma_form"/>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <field name="lab_nom" position="after">
+                <field name="product_name" position="after">
                     <field name="manufacturer"/>
                 </field>
             </field>

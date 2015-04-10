@@ -47,46 +47,49 @@
                             <!-- Put here related buttons -->
                         </div>
                         <group>
-                            <!--field name="name"/-->
-                            <field name="med_abc" default_focus="1"/>
-                            <field name="med_ctr"/>
-                            <field name="med_lab"/>
-                            <field name="lab_nom"/>
-                            <field name="med_des"/>
-                            <field name="med_apr"/>
-                            <field name="med_pco18"/>
-                            <field name="med_pla18"/>
-                            <field name="med_fra18"/>
-                            <field name="med_pco17"/>
-                            <field name="med_pla17"/>
-                            <field name="med_fra17"/>
-                            <field name="med_pco12"/>
-                            <field name="med_pla12"/>
-                            <field name="med_fra12"/>
-                            <field name="med_uni"/>
-                            <field name="med_ipi"/>
-                            <field name="med_dtvig"/>
-                            <field name="exp_13"/>
-                            <field name="med_barra"/>
-                            <field name="med_gene"/>
-                            <field name="med_negpos"/>
-                            <field name="med_princi"/>
-                            <field name="med_pco19"/>
-                            <field name="med_pla19"/>
-                            <field name="med_fra19"/>
-                            <field name="med_pcozfm"/>
-                            <field name="med_plazfm"/>
-                            <field name="med_frazfm"/>
-                            <field name="med_pco0"/>
-                            <field name="med_pla0"/>
-                            <field name="med_fra0"/>
-                            <field name="med_regims"/>
-                            <field name="med_varpre"/>
-                            <field name="from"/>
-                            <field name="excluded"/>
-                            <field name="product_name"/>
-                            <!--field name="tag_ids"/-->
-                            <!--field name="status"/-->
+                            <group>
+                                <field name="med_abc" default_focus="1"/>
+                                <field name="med_ctr"/>
+                                <field name="med_lab"/>
+                                <field name="lab_nom"/>
+                                <field name="med_des"/>
+                                <field name="med_apr"/>
+                                <field name="med_uni"/>
+                                <field name="med_ipi"/>
+                                <field name="med_dtvig"/>
+                                <field name="exp_13"/>
+                                <field name="med_barra"/>
+                                <field name="med_gene"/>
+                                <field name="med_negpos"/>
+                                <field name="med_princi"/>
+                                <field name="med_pcozfm"/>
+                                <field name="med_plazfm"/>
+                                <field name="med_frazfm"/>
+                                <field name="med_regims"/>
+                                <field name="med_varpre"/>
+                            </group>
+                            <group>
+                                <field name="from"/>
+                                <field name="excluded"/>
+                                <field name="product_name"/>
+                            </group>
+                            <group>
+                                <field name="med_pco18"/>
+                                <field name="med_pla18"/>
+                                <field name="med_fra18"/>
+                                <field name="med_pco17"/>
+                                <field name="med_pla17"/>
+                                <field name="med_fra17"/>
+                                <field name="med_pco12"/>
+                                <field name="med_pla12"/>
+                                <field name="med_fra12"/>
+                                <field name="med_pco19"/>
+                                <field name="med_pla19"/>
+                                <field name="med_fra19"/>
+                                <field name="med_pco0"/>
+                                <field name="med_pla0"/>
+                                <field name="med_fra0"/>
+                            </group>
                         </group>
                         <notebook>
                             <!--page string="Information" groups="clv_base.group_clv_suser">
