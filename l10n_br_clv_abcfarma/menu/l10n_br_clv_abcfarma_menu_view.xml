@@ -2,9 +2,9 @@
 <openerp>
     <data>
 
-        <!-- Pharmacy/Medicament/ABCFarma -->
-        <menuitem name="ABCFarma" id="menu_pharmacymedicament_abcfarma"
-            parent="clv_base.menu_pharmacy_medicament"
+        <!-- Pharmacy/Medicament/Medicaments/ABCFarma -->
+        <menuitem name="ABCFarma" id="menu_pharmacy_medicament_abcfarma"
+            parent="clv_medicament.menu_pharmacy_medicament_medicaments"
             groups="clv_base.group_medicament_user"
             sequence="50"
             action="l10n_br_clv_abcfarma.act_open_clv_abcfarma_view" />
