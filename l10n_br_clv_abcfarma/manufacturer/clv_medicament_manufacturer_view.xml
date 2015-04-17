@@ -23,6 +23,9 @@
                 <field name="lab_nom" position="after">
                     <field name="manufacturer"/>
                 </field>
+                <filter string="Active Medicaments" position="after">
+                    <filter string="Missing Manufacturer" name="missing_manufacturer" domain="[('manufacturer','=',False)]"/>
+                </filter>
                 <filter string="From" position="after">
                     <filter string="Manufacturer" domain="[]" context="{'group_by': 'manufacturer'}"/>
                 </filter>

@@ -73,7 +73,7 @@
                                 <field name="excluded"/>
                                 <field name="product_name"/>
                             </group>
-                            <group>
+                            <!--group>
                                 <field name="med_pco18"/>
                                 <field name="med_pla18"/>
                                 <field name="med_fra18"/>
@@ -89,9 +89,32 @@
                                 <field name="med_pco0"/>
                                 <field name="med_pla0"/>
                                 <field name="med_fra0"/>
-                            </group>
+                            </group-->
                         </group>
                         <notebook>
+                            <page string="Prices">
+                                <group>
+                                    <group>
+                                        <field name="med_pco12"/>
+                                        <field name="med_pla12"/>
+                                        <field name="med_fra12"/>
+                                        <field name="med_pco17"/>
+                                        <field name="med_pla17"/>
+                                        <field name="med_fra17"/>
+                                        <field name="med_pco18"/>
+                                        <field name="med_pla18"/>
+                                        <field name="med_fra18"/>
+                                    </group>
+                                    <group>
+                                        <field name="med_pco19"/>
+                                        <field name="med_pla19"/>
+                                        <field name="med_fra19"/>
+                                        <field name="med_pco0"/>
+                                        <field name="med_pla0"/>
+                                        <field name="med_fra0"/>
+                                    </group>
+                                </group>
+                            </page>
                             <!--page string="Information" groups="clv_base.group_clv_suser">
                                 <group string="Information" />
                                 <div class="oe_edit_only">
@@ -132,8 +155,8 @@
                     <field name="from"/>
                     <field name="excluded"/>
                     <newline />
-                    <filter string="Excluded Medicaments" name="comunities" domain="[('excluded','=',1)]" help="Excluded Medicaments"/>
-                    <filter string="Active Medicaments" name="comunities" domain="[('excluded','=',0)]" help="Active Medicaments"/>
+                    <filter string="Excluded Medicaments" name="excluded_medicaments" domain="[('excluded','=',1)]" help="Excluded Medicaments"/>
+                    <filter string="Active Medicaments" name="active_medicaments" domain="[('excluded','=',0)]" help="Active Medicaments"/>
                     <separator/>
                     <group expand="0" string="Group By...">
                         <filter string="From" domain="[]" context="{'group_by': 'from'}"/>

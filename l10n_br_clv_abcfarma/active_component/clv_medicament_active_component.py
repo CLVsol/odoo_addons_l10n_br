@@ -35,4 +35,8 @@ class clv_abcfarma(osv.osv):
         'active_component': fields.many2one('clv_medicament.active_component', 
                                             string='Active Component', 
                                             help='Medicament Active Component'),
+        'concentration': fields.char(size=256, string='Concentration'),
+        'pres_form': fields.many2one('clv_medicament.form', string='Presentation Form', 
+                                     help='Medicament form, such as tablet or gel'),
+        'pres_quantity': fields.integer(string='Presentation Quantity'),
         }
