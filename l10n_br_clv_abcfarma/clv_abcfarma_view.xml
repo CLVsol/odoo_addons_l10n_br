@@ -71,6 +71,7 @@
                             <group>
                                 <field name="from"/>
                                 <field name="excluded"/>
+                                <field name="for_hospital_use"/>
                                 <field name="product_name"/>
                             </group>
                             <!--group>
@@ -157,6 +158,8 @@
                     <newline />
                     <filter string="Excluded Medicaments" name="excluded_medicaments" domain="[('excluded','=',1)]" help="Excluded Medicaments"/>
                     <filter string="Active Medicaments" name="active_medicaments" domain="[('excluded','=',0)]" help="Active Medicaments"/>
+                    <filter string="General Use" name="missing_active_component" domain="[('for_hospital_use','=',False)]"/>
+                    <filter string="Hosptial Use" name="missing_active_component" domain="[('for_hospital_use','=',True)]"/>
                     <separator/>
                     <group expand="0" string="Group By...">
                         <filter string="From" domain="[]" context="{'group_by': 'from'}"/>

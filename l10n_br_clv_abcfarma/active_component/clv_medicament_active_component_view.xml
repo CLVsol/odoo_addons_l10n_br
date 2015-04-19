@@ -12,7 +12,9 @@
                     <field name="active_component"/>
                     <field name="concentration"/>
                     <field name="pres_form"/>
+                    <field name="pres_form_2"/>
                     <field name="pres_quantity"/>
+                    <field name="pres_quantity_unit"/>
                 </field>
             </field>
         </record>
@@ -26,6 +28,8 @@
                 <field name="med_princi" position="after">
                     <field name="active_component"/>
                     <field name="pres_form"/>
+                    <field name="pres_form_2"/>
+                    <field name="for_hospital_use"/>
                 </field>
                 <filter string="Active Medicaments" position="after">
                     <filter string="Missing Active Component" name="missing_active_component" domain="[('active_component','=',False)]"/>
@@ -36,6 +40,7 @@
                 <filter string="From" position="after">
                     <filter string="Active Component" domain="[]" context="{'group_by': 'active_component'}"/>
                     <filter string="Presentation Form" domain="[]" context="{'group_by': 'pres_form'}"/>
+                    <filter string="Presentation Form2" domain="[]" context="{'group_by': 'pres_form_2'}"/>
                 </filter>
             </field>
         </record>

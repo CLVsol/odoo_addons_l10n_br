@@ -69,6 +69,8 @@ class clv_abcfarma(osv.Model):
 
 		'from': fields.char(size=128, string='From'),
 		'excluded': fields.boolean('Excluded'),
+        'for_hospital_use': fields.boolean('For Hospital Use', 
+                                           help="Check if for hospital use only."),
 		'product_name': fields.char(size=256, string='Product Name'),
 
         'active': fields.boolean('Active', 
@@ -80,5 +82,6 @@ class clv_abcfarma(osv.Model):
     _sql_constraints = [('med_abc_uniq', 'unique(med_abc)', u'Duplicated ABCFARMA Code!')]
 
     _defaults = {
+        'for_hospital_use': 0,
         'active': 1,
     }
