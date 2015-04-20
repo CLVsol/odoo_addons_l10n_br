@@ -63,7 +63,7 @@
             <field name="model">clv_abcfarma.history</field>
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
-                <tree string="Person(Management) History">
+                <tree string="ABCFarma History">
                         <field name="abcfarma_id"/>
                         <field name="user_id"/>
                         <field name="date"/>
