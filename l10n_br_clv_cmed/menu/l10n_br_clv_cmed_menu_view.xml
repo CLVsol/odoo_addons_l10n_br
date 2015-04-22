@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Pharmacy/Medicament/Medicaments/CMED -->
+        <menuitem name="CMED" id="menu_pharmacy_medicament_cmed"
+            parent="clv_medicament.menu_pharmacy_medicament_medicaments"
+            groups="clv_base.group_medicament_user"
+            sequence="50"
+            action="l10n_br_clv_cmed.act_open_clv_cmed_view" />
+
+    </data>
+</openerp>
