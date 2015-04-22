@@ -145,6 +145,7 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <search string="ABCFARMA">
+                    <field name="name"/>
                     <field name="med_abc"/>
                     <field name="med_ctr"/>
                     <field name="med_lab"/>

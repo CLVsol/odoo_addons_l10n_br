@@ -31,7 +31,7 @@ class clv_abcfarma(osv.Model):
         return result
 
     _columns = {
-        'name' : fields.function(_compute_name, method=True, type='char', size=128, string='ABCFarma Description',),
+        'name' : fields.function(_compute_name, method=True, type='char', size=128, string='ABCFarma Description', store=True),
 		'med_abc': fields.char(size=9, string='MED_ABC'),
 		'med_ctr': fields.char(size=1, string='MED_CTR'),
 		'med_lab': fields.char(size=6, string='MED_LAB'),
@@ -77,7 +77,7 @@ class clv_abcfarma(osv.Model):
                                  help="If unchecked, it will allow you to hide the medicament without removing it."),
     }
 
-    _order='med_abc'
+    _order='name'
 
     _sql_constraints = [('med_abc_uniq', 'unique(med_abc)', u'Duplicated ABCFARMA Code!')]
 
