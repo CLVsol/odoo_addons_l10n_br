@@ -17,13 +17,30 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_lpm
-import clv_tag
-import clv_annotation
-import wkf
-import history
-import clv_medicament
-import clv_medicament_mng
-import active_component
-import manufacturer
-import clv_abcfarma
+from openerp.osv import fields, osv
+
+
+class clv_medicament_active_component(osv.osv):
+    _inherit = 'clv_medicament.active_component'
+
+    _columns = {
+        'lpm_ids': fields.one2many('clv_lpm', 'active_component', 'LPM'),
+
+        }
+
+class clv_lpm(osv.osv):
+    _inherit = 'clv_lpm'
+
+    _columns = {
+        'active_component': fields.many2one('clv_medicament.active_component', 
+                                            string='Active Component', 
+                                            help='Medicament Active Component'),
+        'concentration': fields.char(size=256, string='Concentration'),
+        'pres_form': fields.many2one('clv_medicament.form', string='Presentation Form', 
+                                     help='Medicament form, such as tablet or gel'),
+        'pres_form_2': fields.many2one('clv_medicament.form', string='Presentation Form 2', 
+                                        help='Medicament form, such as tablet or gel'),
+        'pres_quantity': fields.float(string='Presentation Quantity'),
+        'pres_quantity_unit': fields.many2one('clv_medicament.uom', string='Quantity Unit', 
+                                              help='Unit of measure for the medicament to be taken'),
+        }

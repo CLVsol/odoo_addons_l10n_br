@@ -18,7 +18,7 @@
 ################################################################################
 
 {
-    'name': 'LPM (customizations for BioBox)',
+    'name': 'LPM',
     'version': '1.0',
     'author': 'Carlos Eduardo Vercelino - CLVsol',
     'category': 'Generic Modules/Others',
@@ -35,6 +35,7 @@ LPM
         'clv_annotation',
         'clv_medicament',
         'clv_medicament_mng',
+        'l10n_br_clv_abcfarma',
         ],
     'data': [
         'security/ir.model.access.csv',
@@ -44,11 +45,12 @@ LPM
         'wkf/clv_lpm_workflow.xml',
         'wkf/clv_lpm_wkf_view.xml',
         'history/clv_lpm_history_view.xml',
-        # 'clv_medicament/clv_medicament_view.xml',
-        # 'clv_medicament_mng/clv_medicament_mng_view.xml',
+        'clv_medicament/clv_medicament_view.xml',
+        'clv_medicament_mng/clv_medicament_mng_view.xml',
         'menu/l10n_br_clv_lpm_menu_view.xml',
-        # 'active_component/clv_medicament_active_component_view.xml',
-        # 'manufacturer/clv_medicament_manufacturer_view.xml',
+        'active_component/clv_medicament_active_component_view.xml',
+        'manufacturer/clv_medicament_manufacturer_view.xml',
+        'clv_abcfarma/clv_abcfarma_view.xml',
         ],
     'demo': [],
     'test': [],

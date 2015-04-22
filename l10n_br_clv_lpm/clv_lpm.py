@@ -26,12 +26,12 @@ class clv_lpm(osv.Model):
     def _compute_name(self, cr, uid, ids, field_name, arg, context={}):
         result = {}
         for r in self.browse(cr, uid, ids, context=context):
-            result[r.id] = '[' + r.cod_prod + '] ' + r.descricao + ' (' + r.principio_ativo + ') ' + r.apres_produto + ' - ' + \
+            result[r.id] = '[' + str(r.cod_prod) + '] ' + r.apres_produto + ' (' + r.principio_ativo + ') ' + ' - ' + \
                            r.latoratorio + ' [' + r.ean_principal + '] '
         return result
 
     _columns = {
-        'name' : fields.function(_compute_name, method=True, type='char', size=128, string='LPM Description',),
+        'name' : fields.function(_compute_name, method=True, type='char', size=128, string='LPM Description', store=True),
 		'cod_prod': fields.integer(string='Cod Prod'),
 		'latoratorio': fields.char(size=128, string='Laboratorio'),
 		'produto': fields.char(size=6, string='Produto'),

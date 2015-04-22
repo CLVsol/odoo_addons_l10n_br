@@ -112,6 +112,7 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <search string="LPM">
+                    <field name="name"/>
                     <field name="cod_prod"/>
                     <field name="latoratorio"/>
                     <field name="descricao"/>

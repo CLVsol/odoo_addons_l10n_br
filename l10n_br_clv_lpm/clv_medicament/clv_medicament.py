@@ -17,13 +17,11 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_lpm
-import clv_tag
-import clv_annotation
-import wkf
-import history
-import clv_medicament
-import clv_medicament_mng
-import active_component
-import manufacturer
-import clv_abcfarma
+from openerp.osv import orm, fields
+
+class clv_medicament(orm.Model):
+    _inherit = 'clv_medicament'
+
+    _columns = {
+        'lpm_id': fields.many2one('clv_lpm', string='LPM'),
+    }

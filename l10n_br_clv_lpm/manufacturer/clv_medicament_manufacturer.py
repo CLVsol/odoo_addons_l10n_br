@@ -17,13 +17,22 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_lpm
-import clv_tag
-import clv_annotation
-import wkf
-import history
-import clv_medicament
-import clv_medicament_mng
-import active_component
-import manufacturer
-import clv_abcfarma
+from openerp.osv import fields, osv
+
+
+class clv_medicament_manufacturer(osv.osv):
+    _inherit = 'clv_medicament.manufacturer'
+
+    _columns = {
+        'lpm_ids': fields.one2many('clv_lpm', 'manufacturer', 'LPM'),
+
+        }
+
+class clv_lpm(osv.osv):
+    _inherit = 'clv_lpm'
+
+    _columns = {
+        'manufacturer': fields.many2one('clv_medicament.manufacturer', 
+                                        string='Manufacturer', 
+                                        help='Medicament Manufacturer'),
+        }
