@@ -31,7 +31,7 @@ class clv_lpm(osv.Model):
         return result
 
     _columns = {
-        'name' : fields.function(_compute_name, method=True, type='char', size=128, string='LPM Description', store=True),
+        'name' : fields.function(_compute_name, method=True, type='char', size=256, string='LPM Description', store=True),
 		'cod_prod': fields.integer(string='Cod Prod'),
 		'latoratorio': fields.char(size=128, string='Laboratorio'),
 		'produto': fields.char(size=6, string='Produto'),
@@ -57,7 +57,7 @@ class clv_lpm(osv.Model):
                                  help="If unchecked, it will allow you to hide the medicament without removing it."),
     }
 
-    _order='cod_prod'
+    _order='name'
 
     _sql_constraints = [('cod_prod_uniq', 'unique(cod_prod)', u'Duplicated LPM Code!')]
 
