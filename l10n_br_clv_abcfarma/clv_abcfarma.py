@@ -31,7 +31,7 @@ class clv_abcfarma(osv.Model):
         return result
 
     _columns = {
-        'name' : fields.function(_compute_name, method=True, type='char', size=128, string='ABCFarma Description', store=True),
+        'name' : fields.function(_compute_name, method=True, type='char', size=256, string='ABCFarma Description', store=True),
 		'med_abc': fields.char(size=9, string='MED_ABC'),
 		'med_ctr': fields.char(size=1, string='MED_CTR'),
 		'med_lab': fields.char(size=6, string='MED_LAB'),

@@ -35,6 +35,7 @@ ABCFARMA
         'clv_annotation',
         'clv_medicament',
         'clv_medicament_mng',
+        'l10n_br_clv_cmed',
         ],
     'data': [
         'security/ir.model.access.csv',
@@ -49,6 +50,7 @@ ABCFARMA
         'menu/l10n_br_clv_abcfarma_menu_view.xml',
         'active_component/clv_medicament_active_component_view.xml',
         'manufacturer/clv_medicament_manufacturer_view.xml',
+        'clv_cmed/clv_cmed_view.xml',
         ],
     'demo': [],
     'test': [],
