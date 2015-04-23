@@ -35,6 +35,7 @@ LPM
         'clv_annotation',
         'clv_medicament',
         'clv_medicament_mng',
+        'l10n_br_clv_cmed',
         'l10n_br_clv_abcfarma',
         ],
     'data': [
@@ -51,6 +52,7 @@ LPM
         'active_component/clv_medicament_active_component_view.xml',
         'manufacturer/clv_medicament_manufacturer_view.xml',
         'clv_abcfarma/clv_abcfarma_view.xml',
+        'clv_cmed/clv_cmed_view.xml',
         ],
     'demo': [],
     'test': [],
