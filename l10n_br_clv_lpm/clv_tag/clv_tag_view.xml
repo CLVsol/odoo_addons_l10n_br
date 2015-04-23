@@ -49,7 +49,7 @@
             <field name="arch" type="xml">
                 <page string="Tag for" position="inside">
                     <group string="LPM Medicaments">
-                        <field name="medicament_ids" colspan="4" nolabel="1"/>
+                        <field name="lpm_ids" colspan="4" nolabel="1"/>
                     </group>
                 </page>
             </field>
