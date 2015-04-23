@@ -25,7 +25,7 @@ class clv_cmed(osv.osv):
     _columns = {
         'annotation_ids': fields.many2many('clv_annotation', 
                                            'clv_cmed_annotation_rel', 
-                                           'medicament_id', 
+                                           'cmed_id', 
                                            'annotation_id', 
                                            'Annotations')
         }
@@ -37,6 +37,6 @@ class clv_annotation(osv.osv):
         'cmed_ids': fields.many2many('clv_cmed', 
                                      'clv_cmed_annotation_rel', 
                                      'annotation_id', 
-                                     'medicament_id', 
+                                     'cmed_id', 
                                      'CMED Medicaments')
         }

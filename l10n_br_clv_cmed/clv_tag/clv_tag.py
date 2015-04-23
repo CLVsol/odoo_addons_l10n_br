@@ -23,11 +23,11 @@ class clv_tag(osv.osv):
     _inherit = 'clv_tag'
 
     _columns = {
-        'medicament_ids': fields.many2many('clv_cmed', 
-                                           'clv_cmed_clv_tag_rel', 
-                                           'tag_id', 
-                                           'medicament_id', 
-                                           'CMED Medicaments'),
+        'cmed_ids': fields.many2many('clv_cmed', 
+                                     'clv_cmed_clv_tag_rel', 
+                                     'tag_id', 
+                                     'cmed_id', 
+                                     'CMED Medicaments'),
         }
 
 class clv_cmed(osv.osv):
@@ -36,7 +36,7 @@ class clv_cmed(osv.osv):
     _columns = {
         'tag_ids': fields.many2many('clv_tag', 
                                     'clv_cmed_clv_tag_rel', 
-                                    'medicament_id', 
+                                    'cmed_id', 
                                     'tag_id', 
                                     'Tags'),
         }

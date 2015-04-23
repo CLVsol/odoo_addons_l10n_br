@@ -32,7 +32,6 @@ class clv_cmed(osv.Model):
 
     _columns = {
         'name' : fields.function(_compute_name, method=True, type='char', size=256, string='CMED Description', store=True),
-		# 'cod_prod': fields.integer(string='Cod Prod'),
 		'principio_ativo': fields.char(size=128, string='Principio Ativo'),
 		'cnpj': fields.char(size=128, string='CNPJ'),
 		'latoratorio': fields.char(size=128, string='Laboratorio'),
@@ -68,7 +67,7 @@ class clv_cmed(osv.Model):
 
     _order='name'
 
-    # _sql_constraints = [('cod_prod_uniq', 'unique(cod_prod)', u'Duplicated CMED Code!')]
+    _sql_constraints = [('codigo_ggrem_uniq', 'unique(codigo_ggrem)', u'Error! Duplicated Codigo GGREM!')]
 
     _defaults = {
         'active': 1,
