@@ -34,7 +34,7 @@ class clv_lpm(osv.Model):
         'name' : fields.function(_compute_name, method=True, type='char', size=256, string='LPM Description', store=True),
 		'cod_prod': fields.integer(string='Cod Prod'),
 		'latoratorio': fields.char(size=128, string='Laboratorio'),
-		'produto': fields.char(size=6, string='Produto'),
+		'produto': fields.char(size=128, string='Produto'),
 		'apres_produto': fields.char(size=128, string='Apresentacao Do Produto'),
 		'ean_principal': fields.char(size=13, string='EAN Principal'),
 		'pmc': fields.float(string='PMC[R$]'),
