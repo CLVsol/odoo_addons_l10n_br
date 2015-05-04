@@ -37,7 +37,7 @@ class clv_cmed(osv.Model):
 		'latoratorio': fields.char(size=128, string='Laboratorio'),
 		'codigo_ggrem': fields.char(size=13, string='Codigo GGREM'),
 		'ean': fields.char(size=13, string='EAN'),
-		'produto': fields.char(size=6, string='Produto'),
+		'produto': fields.char(size=128, string='Produto'),
 		'apresentacao': fields.char(size=128, string='Apresentacao'),
 		'classe_terapeutica': fields.char(size=128, string='Classe Terapeutica'),
 		'pf_0': fields.float(string='PF 0%'),
