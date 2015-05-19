@@ -23,5 +23,6 @@ class clv_lpm(orm.Model):
     _inherit = 'clv_lpm'
 
     _columns = {
+		'med_abc': fields.char(size=9, string='ABCFarma Code'),
         'abcfarma_id': fields.many2one('clv_abcfarma', string='ABCFarma'),
     }

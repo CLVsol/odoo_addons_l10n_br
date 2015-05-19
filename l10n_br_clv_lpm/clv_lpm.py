@@ -52,6 +52,8 @@ class clv_lpm(osv.Model):
 		'from': fields.char(size=128, string='From'),
 		'excluded': fields.boolean('Excluded'),
 		'product_name': fields.char(size=256, string='Product Name'),
+        'is_fraction': fields.boolean('Is a Fraction', 
+                                      help="Check if the medicament is a fraction of a product."),
 
         'active': fields.boolean('Active', 
                                  help="If unchecked, it will allow you to hide the medicament without removing it."),

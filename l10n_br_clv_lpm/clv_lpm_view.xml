@@ -14,6 +14,7 @@
                     <field name="descricao"/>
                     <field name="apres_produto"/>
                     <field name="ean_principal"/>
+                    <field name="is_fraction"/>
                     <field name="from"/>
                     <field name="excluded"/>
                 </tree>
@@ -63,6 +64,7 @@
                             <group>
                                 <field name="from"/>
                                 <field name="excluded"/>
+                                <field name="is_fraction"/>
                                 <field name="product_name"/>
                             </group>
                             <!--group>
@@ -121,9 +123,11 @@
                     <field name="ean_principal"/>
                     <field name="from"/>
                     <field name="excluded"/>
+                    <field name="is_fraction"/>
                     <newline />
                     <filter string="Excluded Medicaments" name="excluded_medicaments" domain="[('excluded','=',1)]" help="Excluded Medicaments"/>
                     <filter string="Active Medicaments" name="active_medicaments" domain="[('excluded','=',0)]" help="Active Medicaments"/>
+                    <filter string="Fraction" name="fraction" domain="[('is_fraction','=',1)]"/>
                     <separator/>
                     <group expand="0" string="Group By...">
                         <filter string="From" domain="[]" context="{'group_by': 'from'}"/>
