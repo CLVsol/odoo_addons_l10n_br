@@ -49,7 +49,7 @@ class clv_orizon(osv.osv):
     _inherit = 'clv_orizon'
 
     _columns = {
-        'history_ids': fields.one2many('clv_orizon.history', 'orizon_id', 'LPM History', readonly=True),
+        'history_ids': fields.one2many('clv_orizon.history', 'orizon_id', 'Orizon History', readonly=True),
         'active_history': fields.boolean('Active History', 
                                          help="If unchecked, it will allow you to disable the history without removing it."),
         }
