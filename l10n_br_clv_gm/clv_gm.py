@@ -26,8 +26,8 @@ class clv_gm(osv.Model):
     def _compute_name(self, cr, uid, ids, field_name, arg, context={}):
         result = {}
         for r in self.browse(cr, uid, ids, context=context):
-            result[r.id] = '[' + str(r.cod_prod_fabricante) + '] ' + r.apresentacao + ' (' + r.principio_ativo + ') ' + ' - ' + \
-                           r.laboratorio
+            result[r.id] = '[' + str(r.cod_prod_fabricante) + '] ' + r.nome_produto + ' (' + r.principio_ativo + ') ' + \
+                           r.apresentacao + ' - ' + r.laboratorio
         return result
 
     _columns = {
