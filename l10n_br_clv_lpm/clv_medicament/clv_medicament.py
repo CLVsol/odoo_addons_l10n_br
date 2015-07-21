@@ -25,3 +25,12 @@ class clv_medicament(orm.Model):
     _columns = {
         'lpm_id': fields.many2one('clv_lpm', string='LPM'),
     }
+
+class clv_lpm(orm.Model):
+    _inherit = 'clv_lpm'
+
+    _columns = {
+        'medicament_ids': fields.one2many('clv_medicament',
+                                          'lpm_id',
+                                          'Medicaments'),
+    }
