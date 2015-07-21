@@ -16,5 +16,21 @@
             </field>
         </record>
         
+        <record id="view_clv_cmed_form_medicament" model="ir.ui.view">
+            <field name="name">clv_cmed.form</field>
+            <field name="model">clv_cmed</field>
+            <field name="inherit_id" ref="view_clv_cmed_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Medicaments">
+                        <group>
+                            <field name="medicament_ids" colspan="4" nolabel="1" />
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
     </data>
 </openerp>
