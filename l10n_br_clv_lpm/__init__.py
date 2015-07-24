@@ -28,3 +28,4 @@ import active_component
 import manufacturer
 import clv_cmed
 import clv_abcfarma
+import clv_orizon

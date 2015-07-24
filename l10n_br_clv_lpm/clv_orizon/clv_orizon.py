@@ -17,51 +17,11 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-{
-    'name': 'LPM',
-    'version': '1.0',
-    'author': 'Carlos Eduardo Vercelino - CLVsol',
-    'category': 'Generic Modules/Others',
-    'license': 'AGPL-3',
-    'website': 'http://clvsol.com',
-    'description': '''
-LPM
-===
-    ''',
-    'images': [],
-    'depends': [
-        'clv_base',
-        'clv_tag',
-        'clv_annotation',
-        'clv_medicament',
-        'clv_medicament_mng',
-        'l10n_br_clv_cmed',
-        'l10n_br_clv_abcfarma',
-        'l10n_br_clv_orizon',
-        ],
-    'data': [
-        'security/ir.model.access.csv',
-        'clv_lpm_view.xml',
-        'clv_tag/clv_tag_view.xml',
-        'clv_annotation/clv_annotation_view.xml',
-        'wkf/clv_lpm_workflow.xml',
-        'wkf/clv_lpm_wkf_view.xml',
-        'history/clv_lpm_history_view.xml',
-        'clv_medicament/clv_medicament_view.xml',
-        'clv_medicament_mng/clv_medicament_mng_view.xml',
-        'menu/l10n_br_clv_lpm_menu_view.xml',
-        'active_component/clv_medicament_active_component_view.xml',
-        'manufacturer/clv_medicament_manufacturer_view.xml',
-        'clv_abcfarma/clv_abcfarma_view.xml',
-        'clv_cmed/clv_cmed_view.xml',
-        'clv_orizon/clv_orizon_view.xml',
-        ],
-    'demo': [],
-    'test': [],
-    'init_xml': [],
-    'test': [],
-    'update_xml': [],
-    'installable': True,
-    'active': False,
-    'css': [],
-}
+from openerp.osv import orm, fields
+
+class clv_lpm(orm.Model):
+    _inherit = 'clv_lpm'
+
+    _columns = {
+        'orizon_id': fields.many2one('clv_orizon', string='Orizon'),
+    }
