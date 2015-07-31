@@ -43,5 +43,5 @@ class clv_lpm_list(models.Model):
     _inherit = 'clv_lpm_list'
 
     lpm_list_item_ids = fields.One2many('clv_lpm_list_item',
-                                          'list_id',
-                                          'LPM List Members')
+                                        'list_id',
+                                        'LPM List Itens')
