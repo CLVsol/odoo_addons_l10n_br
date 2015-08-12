@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_medicament_form" model="ir.ui.view">
+            <field name="name">clv_medicament.form</field>
+            <field name="model">clv_medicament</field>
+            <field name="inherit_id" ref="clv_medicament.view_clv_medicament_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <group string="Status" position="after">
+                    <group>
+                        <field name="lpm_id"/>
+                    </group>
+                </group>
+            </field>
+        </record>
+        
+        <record id="view_clv_lpm_form_medicament" model="ir.ui.view">
+            <field name="name">clv_lpm.form</field>
+            <field name="model">clv_lpm</field>
+            <field name="inherit_id" ref="view_clv_lpm_form"/>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="Medicaments">
+                        <group>
+                            <field name="medicament_ids" colspan="4" nolabel="1" />
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

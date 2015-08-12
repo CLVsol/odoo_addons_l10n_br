@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- Pharmacy/Medicament/Medicaments/LPM -->
+        <menuitem name="LPM" id="menu_pharmacy_medicament_lpm"
+            parent="clv_medicament.menu_pharmacy_medicament_medicaments"
+            groups="clv_base.group_medicament_user"
+            sequence="80"
+            action="l10n_br_clv_lpm.act_open_clv_lpm_view" />
+            <!-- Pharmacy/Medicament/Medicaments/LPM/Lists -->
+            <menuitem name="Lists" id="menu_pharmacy_medicament_lpm_lists"
+                parent="l10n_br_clv_lpm.menu_pharmacy_medicament_lpm"
+                groups="clv_base.group_medicament_user"
+                sequence="10"
+                action="l10n_br_clv_lpm.act_open_clv_lpm_list_view" />
+                <!-- Pharmacy/Medicament/Medicaments/LPM/Lists/Items -->
+                <menuitem name="Items" id="menu_pharmacy_medicament_lpm_lists_items"
+                    parent="l10n_br_clv_lpm.menu_pharmacy_medicament_lpm_lists"
+                    groups="clv_base.group_medicament_user"
+                    sequence="10"
+                    action="l10n_br_clv_lpm.act_open_clv_lpm_list_item_view" />
+
+    </data>
+</openerp>

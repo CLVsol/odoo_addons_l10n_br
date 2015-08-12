@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_abcfarma_form_manufacturer" model="ir.ui.view">
+            <field name="name">clv_abcfarma.form</field>
+            <field name="model">clv_abcfarma</field>
+            <field name="inherit_id" ref="view_clv_abcfarma_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="product_name" position="after">
+                    <field name="manufacturer"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_clv_abcfarma_search_manufacturer" model="ir.ui.view">
+            <field name="name">clv_abcfarma.search</field>
+            <field name="model">clv_abcfarma</field>
+            <field name="inherit_id" ref="view_clv_abcfarma_search"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <field name="lab_nom" position="after">
+                    <field name="manufacturer"/>
+                </field>
+                <filter string="Active Medicaments" position="after">
+                    <filter string="Missing Manufacturer" name="missing_manufacturer" domain="[('manufacturer','=',False)]"/>
+                </filter>
+                <filter string="From" position="after">
+                    <filter string="Manufacturer" domain="[]" context="{'group_by': 'manufacturer'}"/>
+                </filter>
+            </field>
+        </record>
+
+        <record id="view_clv_medicament_manufacturer_form" model="ir.ui.view">
+            <field name="name">clv_medicament.manufacturer.form</field>
+            <field name="model">clv_medicament.manufacturer</field>
+            <field name="inherit_id" ref="clv_medicament.view_clv_medicament_manufacturer_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <page string="Settings" position="before">
+                    <page string="ABCFarma">
+                        <group>
+                            <field name="abcfarma_ids" colspan="4" nolabel="1"/>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>

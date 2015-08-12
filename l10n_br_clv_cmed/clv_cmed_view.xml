@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_cmed_tree" model="ir.ui.view">
+            <field name="name">clv_cmed.tree</field>
+            <field name="model">clv_cmed</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <tree string="CMED">
+                    <field name="name"/>
+                    <field name="codigo_ggrem"/>
+                    <field name="latoratorio"/>
+                    <field name="produto"/>
+                    <field name="apresentacao"/>
+                    <field name="ean"/>
+                    <field name="from"/>
+                    <field name="excluded"/>
+                </tree>
+            </field>
+        </record>
+        
+        <record id="view_clv_cmed_form" model="ir.ui.view">
+            <field name="name">CMED</field>
+            <field name="model">clv_cmed</field>
+            <field name="arch" type="xml">
+                <form string="CMED Medicaments" version="7.0">
+                    <sheet string="CMED Medicament">
+                        <div class="oe_center" name="center">
+                            <!-- Put here related fields -->
+                            <!--label for="name" class="oe_edit_only"/-->
+                            <!--label for="name"/>
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Name..."/>
+                            </h1-->
+                        </div>
+                        <div class="oe_title">
+                            <!--label for="name" class="oe_edit_only"/-->
+                            <label for="name"/>
+                            <h2>
+                                <field name="name" placeholder="Name..."/>
+                            </h2>
+                        </div>
+                        <div class="oe_right oe_button_box" name="button_box">
+                            <!-- Put here related buttons -->
+                        </div>
+                        <group>
+                            <group>
+                                <field name="principio_ativo" default_focus="1"/>
+                                <field name="cnpj"/>
+                                <field name="latoratorio"/>
+                                <field name="codigo_ggrem"/>
+                                <field name="ean"/>
+                                <field name="produto"/>
+                                <field name="apresentacao"/>
+                                <field name="classe_terapeutica"/>
+                                <field name="restr_hospitalar"/>
+                                <field name="cap"/>
+                                <field name="confaz_87"/>
+                                <field name="analise_recursal"/>
+                            </group>
+                            <group>
+                                <field name="from"/>
+                                <field name="excluded"/>
+                                <field name="product_name"/>
+                            </group>
+                            <!--group>
+                                <field name="pmc"/>
+                                <field name="desconto"/>
+                                <field name="preco_venda"/>
+                            </group-->
+                        </group>
+                        <notebook>
+                            <page string="Prices">
+                                <group>
+                                    <group>
+                                        <field name="pf_0"/>
+                                        <field name="pf_12"/>
+                                        <field name="pf_17"/>
+                                        <field name="pf_18"/>
+                                        <field name="pf_19"/>
+                                        <field name="pf_17_zfm"/>
+                                    </group>
+                                    <group>
+                                        <field name="pmc_0"/>
+                                        <field name="pmc_12"/>
+                                        <field name="pmc_17"/>
+                                        <field name="pmc_18"/>
+                                        <field name="pmc_19"/>
+                                        <field name="pmc_17_zfm"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <!--page string="Information" groups="clv_base.group_clv_suser">
+                                <group string="Information" />
+                                <div class="oe_edit_only">
+                                    <label for="info"/>
+                                </div>
+                                <field name="info" colspan="4"/>
+                            </page>
+                            <page string="Medicaments" groups="clv_base.group_clv_suser">
+                                <group>
+                                    <field name="medicament_ids" colspan="4" nolabel="1" />
+                                </group>
+                            </page-->
+                            <page string="Settings" groups="clv_base.group_base_rmanager">
+                                <group>
+                                    <field name="active"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        
+        <record id="view_clv_cmed_search" model="ir.ui.view">
+            <field name="name">clv_cmed.search</field>
+            <field name="model">clv_cmed</field>
+            <field name="priority" eval="8" />
+            <field name="arch" type="xml">
+                <search string="CMED">
+                    <field name="name"/>
+                    <field name="codigo_ggrem"/>
+                    <field name="latoratorio"/>
+                    <field name="produto"/>
+                    <field name="apresentacao"/>
+                    <field name="principio_ativo"/>
+                    <field name="ean"/>
+                    <field name="from"/>
+                    <field name="excluded"/>
+                    <newline />
+                    <filter string="Excluded Medicaments" name="excluded_medicaments" domain="[('excluded','=',1)]" help="Excluded Medicaments"/>
+                    <filter string="Active Medicaments" name="active_medicaments" domain="[('excluded','=',0)]" help="Active Medicaments"/>
+                    <separator/>
+                    <group expand="0" string="Group By...">
+                        <filter string="From" domain="[]" context="{'group_by': 'from'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+        
+        <record model="ir.actions.act_window" id="act_open_clv_cmed_view">
+            <field name="name">CMED</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">clv_cmed</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_clv_cmed_search" />
+            <field name="domain">[]</field>
+            <field name="context">{}</field>
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_cmed_view_form">
+            <field name="act_window_id" ref="act_open_clv_cmed_view" />
+            <field name="sequence" eval="20" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_clv_cmed_form" />
+        </record>
+        
+        <record model="ir.actions.act_window.view" id="act_open_clv_cmed_view_tree">
+            <field name="act_window_id" ref="act_open_clv_cmed_view" />
+            <field name="sequence" eval="10" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_clv_cmed_tree" />
+        </record>
+        
+    </data>
+</openerp>
