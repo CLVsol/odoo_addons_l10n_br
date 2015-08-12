@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_clv_cmed_medicament_user,clv_cmed,model_clv_cmed,clv_base.group_medicament_user,1,0,0,0
+access_clv_cmed_medicament_manager,clv_cmed,model_clv_cmed,clv_base.group_medicament_manager,1,1,1,0
+access_clv_cmed_base_smanager,clv_cmed,model_clv_cmed,clv_base.group_base_smanager,1,1,1,1
+
+access_clv_cmed_history_medicament_user,clv_cmed.history,model_clv_cmed_history,clv_base.group_medicament_user,1,0,0,0
+access_clv_cmed_history_medicament_manager,clv_cmed.history,model_clv_cmed_history,clv_base.group_medicament_manager,1,1,1,0
+access_clv_cmed_history_base_smanager,clv_cmed.history,model_clv_cmed_history,clv_base.group_base_smanager,1,1,1,1
