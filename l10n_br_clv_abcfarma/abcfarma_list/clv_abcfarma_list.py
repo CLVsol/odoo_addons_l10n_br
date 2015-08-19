@@ -17,14 +17,20 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_abcfarma
-import clv_tag
-import clv_annotation
-import wkf
-import history
-import clv_medicament
-import clv_medicament_mng
-import active_component
-import manufacturer
-import clv_cmed
-import abcfarma_list
+from openerp import models, fields, api
+
+class clv_abcfarma_list(models.Model):
+    _name = 'clv_abcfarma.list'
+
+    name = fields.Char('List', required=True, size=64)
+    code = fields.Char ('List Code',size=128, required=False)
+    description = fields.Char(string='Description', size=256)
+    notes = fields.Text(string='Notes')
+    active = fields.Boolean('Active', 
+                            help='The active field allows you to hide the list without removing it.',
+                            default=1)
+
+    _sql_constraints = [
+        ('uniq_list_name', 'unique(name)', "Error! The List Name must be unique!"),
+        ('uniq_list_code', 'unique(code)', "Error! The List Code must be unique!"),
+        ]
