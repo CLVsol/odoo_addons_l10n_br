@@ -8,6 +8,18 @@
             groups="clv_base.group_medicament_user"
             sequence="50"
             action="l10n_br_clv_cmed.act_open_clv_cmed_view" />
+            <!-- Pharmacy/Medicament/Medicaments/CMED/Lists -->
+            <menuitem name="Lists" id="menu_pharmacy_medicament_cmed_lists"
+                parent="l10n_br_clv_cmed.menu_pharmacy_medicament_cmed"
+                groups="clv_base.group_medicament_user"
+                sequence="10"
+                action="l10n_br_clv_cmed.act_open_clv_cmed_list_view"/>
+                <!-- Pharmacy/Medicament/Medicaments/CMED/Lists/Items -->
+                <menuitem name="Items" id="menu_pharmacy_medicament_cmed_lists_items"
+                    parent="l10n_br_clv_cmed.menu_pharmacy_medicament_cmed_lists"
+                    groups="clv_base.group_medicament_user"
+                    sequence="10"
+                    action="l10n_br_clv_cmed.act_open_clv_cmed_list_item_view"/>
 
     </data>
 </openerp>
