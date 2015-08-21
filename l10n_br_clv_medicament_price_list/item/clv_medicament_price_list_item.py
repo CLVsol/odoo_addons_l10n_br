@@ -17,13 +17,16 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_cmed
-import clv_tag
-import clv_annotation
-import wkf
-import history
-import clv_medicament
-import clv_medicament_mng
-import active_component
-import manufacturer
-import cmed_list
+from openerp import models, fields, api
+
+class clv_medicament_price_list_item(models.Model):
+    _inherit = 'clv_medicament_price_list.item'
+
+    consumer_price_12 = fields.Float('Consumer Price (12)')
+    production_price_12 = fields.Float('Production Price (12)')
+    consumer_price_17 = fields.Float('Consumer Price (17)')
+    production_price_17 = fields.Float('Production Price (17)')
+    consumer_price_18 = fields.Float('Consumer Price (18)')
+    production_price_18 = fields.Float('Production Price (18)')
+    consumer_price_19 = fields.Float('Consumer Price (19)')
+    production_price_19 = fields.Float('Production Price (19)')

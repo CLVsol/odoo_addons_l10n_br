@@ -17,13 +17,31 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_cmed
-import clv_tag
-import clv_annotation
-import wkf
-import history
-import clv_medicament
-import clv_medicament_mng
-import active_component
-import manufacturer
-import cmed_list
+from openerp import models, fields, api
+
+class clv_abcfarma_list_item(models.Model):
+    _name = 'clv_abcfarma.list.item'
+
+    list_id = fields.Many2one('clv_abcfarma.list', string='ABCFarma List',
+                              help='ABCFarma List', required=False)
+    medicament_id = fields.Many2one('clv_abcfarma', string='Medicament',
+                                    help='ABCFarma Medicament', required=False)
+    notes = fields.Text(string='Notes')
+    order = fields.Integer(string='Order',
+                           default=10)
+    pmc = fields.Float(string='PMC [R$]')
+    desconto = fields.Float(string='Desconto [%]')
+    preco_venda = fields.Float(string='Preço Venda [%]')
+    included = fields.Boolean('Included')
+    active = fields.Boolean('Active', 
+                            help='The active field allows you to hide the list item without removing it.',
+                            default=1)
+    
+    _order='order'
+
+class clv_abcfarma_list(models.Model):
+    _inherit = 'clv_abcfarma.list'
+
+    abcfarma_list_item_ids = fields.One2many('clv_abcfarma.list.item',
+                                               'list_id',
+                                               'ABCFarma List Itens')

@@ -27,3 +27,4 @@ import clv_medicament_mng
 import active_component
 import manufacturer
 import clv_cmed
+import abcfarma_list

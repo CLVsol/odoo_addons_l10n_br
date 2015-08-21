@@ -17,13 +17,30 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.        #
 ################################################################################
 
-import clv_cmed
-import clv_tag
-import clv_annotation
-import wkf
-import history
-import clv_medicament
-import clv_medicament_mng
-import active_component
-import manufacturer
-import cmed_list
+{
+    'name': 'Medicament Price List - Brazilian Localization',
+    'version': '1.0',
+    'author': 'Carlos Eduardo Vercelino - CLVsol',
+    'category': 'Generic Modules/Others',
+    'license': 'AGPL-3',
+    'website': 'http://clvsol.com',
+    'description': '''
+Medicament Price List - Brazilian Localization
+==============================================
+    ''',
+    'images': [],
+    'depends': [
+        'clv_medicament_price_list',
+        ],
+    'data': [
+        'item/clv_medicament_price_list_item_view.xml',
+        ],
+    'demo': [],
+    'test': [],
+    'init_xml': [],
+    'test': [],
+    'update_xml': [],
+    'installable': True,
+    'active': False,
+    'css': [],
+}
