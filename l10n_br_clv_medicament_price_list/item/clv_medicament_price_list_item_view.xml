@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+         <record model="ir.ui.view" id="view_clv_medicament_price_list_item_tree_l10n_br">
+            <field name="name">clv_medicament_price_list.item.tree</field>
+            <field name="model">clv_medicament_price_list.item</field>
+            <field name="inherit_id" ref="clv_medicament_price_list.view_clv_medicament_price_list_item_tree"/>
+            <field name="arch" type="xml">
+                <field name="production_price" position="after">
+                    <field name="consumer_price_12"/>
+                    <field name="production_price_12"/>
+                    <field name="consumer_price_17"/>
+                    <field name="production_price_17"/>
+                    <field name="consumer_price_18"/>
+                    <field name="production_price_18"/>
+                    <field name="consumer_price_19"/>
+                    <field name="production_price_19"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_clv_medicament_price_list_item_form_l10n_br">
+            <field name="name">clv_medicament_price_list.item.form</field>
+            <field name="model">clv_medicament_price_list.item</field>
+            <field name="inherit_id" ref="clv_medicament_price_list.view_clv_medicament_price_list_item_form"/>
+            <field name="arch" type="xml">
+                <page string="Information" position="before">
+                    <page string="Information">
+                        <group>
+                            <group>
+                                <field name="consumer_price_12"/>
+                                <field name="production_price_12"/>
+                                <field name="consumer_price_17"/>
+                                <field name="production_price_17"/>
+                            </group>
+                            <group>
+                                <field name="consumer_price_18"/>
+                                <field name="production_price_18"/>
+                                <field name="consumer_price_19"/>
+                                <field name="production_price_19"/>
+                            </group>
+                        </group>
+                    </page>
+                </page>
+            </field>
+        </record>
+
+    </data>
+</openerp>
