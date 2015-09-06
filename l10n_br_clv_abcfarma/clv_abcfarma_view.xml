@@ -62,9 +62,9 @@
                                 <field name="med_gene"/>
                                 <field name="med_negpos"/>
                                 <field name="med_princi"/>
-                                <field name="med_pcozfm"/>
-                                <field name="med_plazfm"/>
-                                <field name="med_frazfm"/>
+                                <!--field name="med_pcozfm"/-->
+                                <!--field name="med_plazfm"/-->
+                                <!--field name="med_frazfm"/-->
                                 <field name="med_regims"/>
                                 <field name="med_varpre"/>
                             </group>
@@ -113,6 +113,9 @@
                                         <field name="med_pco0"/>
                                         <field name="med_pla0"/>
                                         <field name="med_fra0"/>
+                                        <field name="med_pcozfm"/>
+                                        <field name="med_plazfm"/>
+                                        <field name="med_frazfm"/>
                                     </group>
                                 </group>
                             </page>
