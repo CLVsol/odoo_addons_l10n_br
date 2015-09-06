@@ -32,6 +32,18 @@ class clv_cmed_list_item(models.Model):
     pmc = fields.Float(string='PMC [R$]')
     desconto = fields.Float(string='Desconto [%]')
     preco_venda = fields.Float(string='Preço Venda [%]')
+    pf_0 = fields.Float(string='PF 0%')
+    pf_12 = fields.Float(string='PF 12%')
+    pf_17 = fields.Float(string='PF 17%')
+    pf_18 = fields.Float(string='PF 18%')
+    pf_19 = fields.Float(string='PF 19%')
+    pf_17_zfm = fields.Float(string='PF 17% ZONA FRANCA DE MANAUS')
+    pmc_0 = fields.Float(string='PMC 0%')
+    pmc_12 = fields.Float(string='PMC 12%')
+    pmc_17 = fields.Float(string='PMC 17%')
+    pmc_18 = fields.Float(string='PMC 18%')
+    pmc_19 = fields.Float(string='PMC 19%')
+    pmc_17_zfm = fields.Float(string='PMC 17% ZONA FRANCA DE MANAUS')
     included = fields.Boolean('Included')
     active = fields.Boolean('Active', 
                             help='The active field allows you to hide the list item without removing it.',
@@ -43,5 +55,5 @@ class clv_cmed_list(models.Model):
     _inherit = 'clv_cmed.list'
 
     cmed_list_item_ids = fields.One2many('clv_cmed.list.item',
-                                               'list_id',
-                                               'CMED List Itens')
+                                         'list_id',
+                                         'CMED List Itens')
