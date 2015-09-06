@@ -25,8 +25,8 @@
             <field name="model">clv_cmed.list.item</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <form string="Orizon LPM List Itens" version="7.0">
-                    <sheet string="Orizon LPM List Item">
+                <form string="CMED List Itens" version="7.0">
+                    <sheet string="CMED List Item">
                         <div class="oe_center" name="center">
                             <!-- Put here related fields -->
                         </div>
@@ -67,6 +67,26 @@
                             <!-- Put here related buttons -->
                         </div>
                         <notebook>
+                            <page string="Prices">
+                                <group>
+                                    <group>
+                                        <field name="pf_0"/>
+                                        <field name="pf_12"/>
+                                        <field name="pf_17"/>
+                                        <field name="pf_18"/>
+                                        <field name="pf_19"/>
+                                        <field name="pf_17_zfm"/>
+                                    </group>
+                                    <group>
+                                        <field name="pmc_0"/>
+                                        <field name="pmc_12"/>
+                                        <field name="pmc_17"/>
+                                        <field name="pmc_18"/>
+                                        <field name="pmc_19"/>
+                                        <field name="pmc_17_zfm"/>
+                                    </group>
+                                </group>
+                            </page>
                             <page string="Public Information">
                                 <field name="notes" placeholder="Other Information ..." colspan="4"/>
                             </page>
@@ -86,18 +106,15 @@
             <field name="model">clv_cmed.list.item</field>
             <field name="priority" eval="8"/>
             <field name="arch" type="xml">
-                <search string="Orizon LPM List Item">
+                <search string="CMED List Item">
                     <field name="list_id"/>
                     <field name="medicament_id"/>
                     <field name="order"/>
-                    <field name="pmc"/>
-                    <field name="desconto"/>
-                    <field name="preco_venda"/>
                     <field name="included"/>
                     <field name="notes"/>
                     <separator/>
                     <group expand="0" string="Group By...">
-                        <filter string="Orizon LPM List" domain="[]" context="{'group_by': 'list_id'}"/>
+                        <filter string="CMED List" domain="[]" context="{'group_by': 'list_id'}"/>
                         <filter string="Included" domain="[]" context="{'group_by': 'included'}"/>
                     </group>
                 </search>
@@ -105,7 +122,7 @@
         </record>
         
         <record model="ir.actions.act_window" id="act_open_clv_cmed_list_item_view">
-            <field name="name">Orizon LPM List Itens</field>
+            <field name="name">CMED List Itens</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">clv_cmed.list.item</field>
             <field name="view_type">form</field>
@@ -115,7 +132,7 @@
             <field name="context">{}</field>
             <field name="help" type="html">
               <p class="oe_view_nocontent_create">
-                Click to add a new Orizon LPM List Item.
+                Click to add a new CMED List Item.
               </p>
             </field>
         </record>
@@ -141,7 +158,7 @@
             <field name="priority" eval="8" />
             <field name="arch" type="xml">
                 <page string="Settings" position="before">
-                    <page string="Orizon LPM List Itens">
+                    <page string="CMED List Itens">
                         <group>
                             <field name="cmed_list_item_ids" colspan="4" nolabel="1" />
                         </group>
