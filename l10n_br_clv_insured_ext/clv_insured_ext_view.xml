@@ -2,10 +2,10 @@
 <openerp>
     <data>
 
-        <record model="ir.ui.view" id="view_clv_insured_outside_tree_l10n_br">
-            <field name="name">clv_insured_outside.tree</field>
-            <field name="model">clv_insured_outside</field>
-            <field name="inherit_id" ref="clv_insured_outside.view_clv_insured_outside_tree"/>
+        <record model="ir.ui.view" id="view_clv_insured_ext_tree_l10n_br">
+            <field name="name">clv_insured_ext.tree</field>
+            <field name="model">clv_insured_ext</field>
+            <field name="inherit_id" ref="clv_insured_ext.view_clv_insured_ext_tree"/>
             <field name="arch" type="xml">
                 <field name="code" position="after">
                     <field name="cpf"/>
@@ -14,10 +14,10 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="view_clv_insured_outside_form_l10n_br">
-            <field name="name">clv_insured_outside.form</field>
-            <field name="model">clv_insured_outside</field>
-            <field name="inherit_id" ref="clv_insured_outside.view_clv_insured_outside_form"/>
+        <record model="ir.ui.view" id="view_clv_insured_ext_form_l10n_br">
+            <field name="name">clv_insured_ext.form</field>
+            <field name="model">clv_insured_ext</field>
+            <field name="inherit_id" ref="clv_insured_ext.view_clv_insured_ext_form"/>
             <field name="arch" type="xml">
                 <field name="identification_id" position="replace">
                     <field name="cpf"/>
@@ -28,10 +28,10 @@
             </field>
         </record>
 
-        <record model="ir.ui.view" id="view_clv_insured_outside_search_l10n_br">
-            <field name="name">clv_insured_outside.filter</field>
-            <field name="model">clv_insured_outside</field>
-            <field name="inherit_id" ref="clv_insured_outside.view_clv_insured_outside_search"/>
+        <record model="ir.ui.view" id="view_clv_insured_ext_search_l10n_br">
+            <field name="name">clv_insured_ext.filter</field>
+            <field name="model">clv_insured_ext</field>
+            <field name="inherit_id" ref="clv_insured_ext.view_clv_insured_ext_search"/>
             <field name="arch" type="xml">
                 <field name="code" position="after">
                     <field name="cpf"/>

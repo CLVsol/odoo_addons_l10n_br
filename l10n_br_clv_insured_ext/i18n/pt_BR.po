@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* clv_insured_outside
+#	* clv_insured_ext
 #
 msgid ""
 msgstr ""
