@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+
+        <record model="ir.ui.view" id="view_clv_person_tree_l10n_br">
+            <field name="name">clv_person.tree</field>
+            <field name="model">clv_person</field>
+            <field name="inherit_id" ref="clv_person.view_clv_person_tree"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="cpf"/>
+                    <field name="rg"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_clv_person_form_l10n_br">
+            <field name="name">clv_person.form</field>
+            <field name="model">clv_person</field>
+            <field name="inherit_id" ref="clv_person.view_clv_person_form"/>
+            <field name="arch" type="xml">
+                <field name="identification_id" position="replace">
+                    <field name="cpf"/>
+                </field>
+                <field name="otherid" position="replace">
+                    <field name="rg"/>
+                </field>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_clv_person_search_l10n_br">
+            <field name="name">clv_person.filter</field>
+            <field name="model">clv_person</field>
+            <field name="inherit_id" ref="clv_person.view_clv_person_search"/>
+            <field name="arch" type="xml">
+                <field name="code" position="after">
+                    <field name="cpf"/>
+                    <field name="rg"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
