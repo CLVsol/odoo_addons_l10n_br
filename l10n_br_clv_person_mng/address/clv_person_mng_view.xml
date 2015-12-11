@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="view_clv_person_mng_form_address" model="ir.ui.view">
+            <field name="name">clv_person_mng.form</field>
+            <field name="model">clv_person_mng</field>
+            <field name="inherit_id" ref="clv_person_mng.view_clv_person_mng_form" />
+            <field name="arch" type="xml">
+                <field name="addr_zip" position="replace"/>
+                <field name="addr_street" position="replace">
+                    <field name="addr_zip" placeholder="CEP"/>
+                    <field name="addr_street" placeholder="Logadouro"/>
+                    <field name="addr_number" placeholder="Número" />
+                </field>
+                <field name="addr_street2" position="replace">
+                    <field name="addr_street2" placeholder="Complemento" />
+                    <field name="addr_district" placeholder="Bairro" />
+                </field>
+                <field name="addr_state_id" position="attributes">
+                    <attribute name="domain">[('country_id','=',addr_country_id)]</attribute>
+                    <attribute name="style">width: 70%%</attribute>
+                </field>
+                <field name="addr_state_id" position="after">
+                    <field name="addr_l10n_br_city_id" placeholder="Cidade"/>
+                </field>
+                <field name="addr_city" position="replace">
+                    <field name="addr_city" invisible="1"/>
+                </field>
+                <field name="addr_country_id" position="replace"/>
+                <field name="addr_state_id" position="before">
+                    <field name="addr_country_id" placeholder="Pais"/>
+                </field>
+                <field name="addr_zip" position="attributes">
+                    <attribute name="style">width: 50%</attribute>
+                </field>
+                <field name="addr_zip" position="after">
+                    <button name="addr_zip_search" type="object" class="oe_inline oe_edit_only">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>
