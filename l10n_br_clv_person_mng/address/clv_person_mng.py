@@ -24,6 +24,9 @@ from openerp import models, fields, api
 class clv_person_mng(models.Model):
     _inherit = 'clv_person_mng'
 
+    addr_name = fields.Char(string="Name", store=True,
+                            compute="_get_compute_name",
+                            help='Use "/" to get an automatic new Address Name.')
     addr_l10n_br_city_id = fields.Many2one('l10n_br_base.city', u'Município',
                                            domain="[('state_id','=',addr_state_id)]")
     addr_district = fields.Char('Bairro', size=32)
@@ -97,3 +100,32 @@ class clv_person_mng(models.Model):
                     )
                 else:
                     return True
+
+    @api.depends('addr_street', 'addr_number', 'addr_street2')
+    def _get_compute_name(self):
+        if self.addr_street:
+            self.addr_name = self.addr_street
+            if self.addr_number:
+                self.addr_name = self.addr_name + ', ' + self.addr_number
+                if self.addr_street2:
+                    self.addr_name = self.addr_name + ' - ' + self.addr_street2
+            else:
+                if self.addr_street2:
+                    self.addr_name = self.addr_name + ' - ' + self.addr_street2
+        else:
+            self.addr_name = False
+
+    @api.onchange('addr_name')
+    def onchange_addr_name(self):
+        if self.addr_name == '/':
+            if self.addr_street:
+                self.addr_name = self.addr_street
+                if self.addr_number:
+                    self.addr_name = self.addr_name + ', ' + self.addr_number
+                    if self.addr_street2:
+                        self.addr_name = self.addr_name + ' - ' + self.addr_street2
+                else:
+                    if self.addr_street2:
+                        self.addr_name = self.addr_name + ' - ' + self.addr_street2
+            else:
+                self.addr_name = False
