@@ -20,9 +20,13 @@
 import re
 from openerp import models, fields, api
 
+
 class clv_address(models.Model):
     _inherit = 'clv_address'
 
+    name = fields.Char(string="Name", store=True,
+                       compute="_get_compute_name",
+                       help='Use "/" to get an automatic new Address Name.')
     l10n_br_city_id = fields.Many2one('l10n_br_base.city', u'Município', domain="[('state_id','=',state_id)]")
     district = fields.Char('Bairro', size=32)
     number = fields.Char(u'Número', size=10)
@@ -32,15 +36,14 @@ class clv_address(models.Model):
 
         if address.country_id and address.country_id.code != 'BR':
             # this ensure other localizations could do what they want
-            return super(ResPartner, self)._display_address(
+            return super(clv_address, self)._display_address(
                 address,
                 without_company=False)
         else:
-            address_format = (
-                address.country_id
-                and address.country_id.address_format
-                or "%(street)s\n%(street2)s\n%(l10n_br_city_name)s %(state_code)s"
-                "%(zip)s\n%(country_name)s")
+            address_format = (address.country_id and
+                              address.country_id.address_format or
+                              "%(street)s\n%(street2)s\n%(l10n_br_city_name)s %(state_code)s"
+                              "%(zip)s\n%(country_name)s")
             args = {
                 'state_code': address.state_id and address.state_id.code or '',
                 'state_name': address.state_id and address.state_id.name or '',
@@ -86,9 +89,8 @@ class clv_address(models.Model):
         """ Returns the list of address fields that are synced from the parent
         when the `use_parent_address` flag is set.
         Extenção para os novos campos do endereço """
-        address_fields = super(ResPartner, self)._address_fields()
+        address_fields = super(clv_address, self)._address_fields()
         return list(address_fields + ['l10n_br_city_id', 'number', 'district'])
-
 
     @api.onchange('l10n_br_city_id')
     def onchange_l10n_br_city_id(self):
@@ -142,3 +144,32 @@ class clv_address(models.Model):
                     )
                 else:
                     return True
+
+    @api.depends('street', 'number', 'street2')
+    def _get_compute_name(self):
+        if self.street:
+            self.name = self.street
+            if self.number:
+                self.name = self.name + ', ' + self.number
+                if self.street2:
+                    self.name = self.name + ' - ' + self.street2
+            else:
+                if self.street2:
+                    self.name = self.name + ' - ' + self.street2
+        else:
+            self.name = False
+
+    @api.onchange('name')
+    def onchange_name(self):
+        if self.name == '/':
+            if self.street:
+                self.name = self.street
+                if self.number:
+                    self.name = self.name + ', ' + self.number
+                    if self.street2:
+                        self.name = self.name + ' - ' + self.street2
+                else:
+                    if self.street2:
+                        self.name = self.name + ' - ' + self.street2
+            else:
+                self.name = False
