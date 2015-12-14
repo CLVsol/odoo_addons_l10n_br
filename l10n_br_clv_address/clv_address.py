@@ -24,9 +24,6 @@ from openerp import models, fields, api
 class clv_address(models.Model):
     _inherit = 'clv_address'
 
-    name = fields.Char(string="Name", store=True,
-                       compute="_get_compute_name",
-                       help='Use "/" to get an automatic new Address Name.')
     l10n_br_city_id = fields.Many2one('l10n_br_base.city', u'Município', domain="[('state_id','=',state_id)]")
     district = fields.Char('Bairro', size=32)
     number = fields.Char(u'Número', size=10)
@@ -144,32 +141,3 @@ class clv_address(models.Model):
                     )
                 else:
                     return True
-
-    @api.depends('street', 'number', 'street2')
-    def _get_compute_name(self):
-        if self.street:
-            self.name = self.street
-            if self.number:
-                self.name = self.name + ', ' + self.number
-                if self.street2:
-                    self.name = self.name + ' - ' + self.street2
-            else:
-                if self.street2:
-                    self.name = self.name + ' - ' + self.street2
-        else:
-            self.name = False
-
-    @api.onchange('name')
-    def onchange_name(self):
-        if self.name == '/':
-            if self.street:
-                self.name = self.street
-                if self.number:
-                    self.name = self.name + ', ' + self.number
-                    if self.street2:
-                        self.name = self.name + ' - ' + self.street2
-                else:
-                    if self.street2:
-                        self.name = self.name + ' - ' + self.street2
-            else:
-                self.name = False
